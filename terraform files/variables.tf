@@ -1,6 +1,6 @@
 variable "harvester_kubeconfig_path" {
     type = string
-    default = "./local.yaml"
+    default = "../kubeconfig.yaml"
 }
 
 variable "harvester_clusternetwork_name" {

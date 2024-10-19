@@ -96,6 +96,32 @@ resource "harvester_virtualmachine" "wireguard" {
     efi = true
     secure_boot = false
 
-    network_name = harvester_clusternetwork.mgmt-vlan1.id
+    network_interface {
+      name = "nic-1"
+      network_name = harvester_network.mgmt-vlan_id
+    }
 
+    disk {
+      name = "cdrom-disk"
+      type = "cd-rom"
+      size = "10Gi"
+      bus = "sata"
+      boot_order = 2
+
+      image = harvester_image.wireguard.id
+    }
+
+  disk {
+    name       = "rootdisk"
+    type       = "disk"
+    size       = "8Gi"
+    bus        = "virtio"
+    boot_order = 1
+    }
+
+      input {
+    name = "tablet"
+    type = "tablet"
+    bus  = "usb"
+  }
 }
