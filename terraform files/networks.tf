@@ -11,5 +11,5 @@ resource "harvester_network" "vm_network" {
     route_mode = "auto"
     route_dhcp_server_ip = ""
 
-    cluster_network_name = "cluster_vlan"
+    cluster_network_name = "mgmt"
 }

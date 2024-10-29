@@ -27,13 +27,13 @@ resource "harvester_cloudinit_secret" "cloud-config-opensuse154" {
   network_data = ""
 }
 
-resource "harvester_cloudinit_secret" "cloud-config-ubuntu20" {
-  name      = "cloud-config-ubuntu20"
+resource "harvester_cloudinit_secret" "cloud-config-ubuntu24" {
+  name      = "cloud-config-ubuntu24"
   namespace = "default"
 
   user_data    = <<-EOF
     #cloud-config
-    password: 123456
+    password: 260803
     chpasswd:
       expire: false
     ssh_pwauth: true
